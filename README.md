@@ -1,51 +1,55 @@
-# Sistema de gestión de fábrica de vehículos
+# Vehicle Factory Management System
 
-Proyecto académico desarrollado en Java para la asignatura de Programación Orientada a Objetos.
+Academic project developed in Java for the Object-Oriented Programming course.
 
-La aplicación simula la gestión básica de una fábrica de vehículos: almacén de componentes, trabajadores, configuraciones de vehículos, cadenas de montaje, robots asignados a operarios y generación de estadísticas de producción.
+The application simulates the basic management of a vehicle factory: component inventory, workers, vehicle configurations, assembly lines, robots assigned to operators, and production statistics generation.
 
-## Tecnologías utilizadas
 
-- Java
-- Programación orientada a objetos
-- Colecciones con `ArrayList`
-- Enumeraciones
-- Herencia y clases abstractas
-- Interfaces
-- Simulación por consola
+## Technologies Used
 
-## Funcionalidades principales
+* Java
+* Object-oriented programming
+* Collections with `ArrayList`
+* Enumerations
+* Inheritance and abstract classes
+* Interfaces
+* Console-based simulation
 
-- Alta de motores, tapicerías y ruedas.
-- Alta de trabajadores: operarios, gestores, administradores y mecánicos.
-- Creación de configuraciones de vehículos.
-- Gestión de stock de componentes.
-- Creación de cadenas de montaje.
-- Simulación del ensamblaje de vehículos por fases:
-  - chasis
-  - motor
-  - tapicería
-  - ruedas
-- Asignación de robots a operarios.
-- Listado y filtrado de operarios según rendimiento.
-- Listado de vehículos ensamblados.
-- Dashboard de estado de fábrica.
-- Estadísticas generales de producción.
 
-## Modelo de dominio
+## Main Features
 
-El proyecto está construido alrededor de varias entidades principales:
+* Registration of engines, upholstery, and wheels.
+* Registration of workers: operators, plant managers, system administrators, and assembly line mechanics.
+* Creation of vehicle configurations.
+* Component stock management.
+* Creation of assembly lines.
+* Simulation of vehicle assembly through different stages:
+  * chassis
+  * engine
+  * upholstery
+  * wheels
+* Assignment of robots to operators.
+* Listing and filtering operators by performance.
+* Listing of assembled vehicles.
+* Factory status dashboard.
+* General production statistics.
 
-- `Vehiculo`: clase abstracta base para `Turismo`, `Furgoneta` y `BiplazaDeportivo`.
-- `Trabajador`: clase abstracta base para `Operario`, `GestorPlanta`, `AdminSistemas` y `MecanicoCinta`.
-- `Motor`, `Tapiceria` y `Ruedas`: componentes necesarios para fabricar vehículos.
-- `ConfiguracionVehiculo`: une vehículo, motor, tapicería, ruedas y unidades solicitadas.
-- `CadenaMontaje`: simula el avance de fabricación por estados.
-- `Planificador`: coordina las cadenas de montaje.
-- `SistemaGestionFabrica`: clase principal de lógica de negocio.
-- `FactoryMain`: interfaz de consola.
 
-## Estructura del proyecto
+## Domain Model
+
+The project is built around several main entities:
+
+* `Vehiculo`: abstract base class for `Turismo`, `Furgoneta`, and `BiplazaDeportivo`.
+* `Trabajador`: abstract base class for `Operario`, `GestorPlanta`, `AdminSistemas`, and `MecanicoCinta`.
+* `Motor`, `Tapiceria`, and `Ruedas`: components required to manufacture vehicles.
+* `ConfiguracionVehiculo`: connects a vehicle, engine, upholstery, wheels, and requested units.
+* `CadenaMontaje`: simulates the manufacturing progress through different states.
+* `Planificador`: coordinates the assembly lines.
+* `SistemaGestionFabrica`: main business logic class.
+* `FactoryMain`: console interface.
+
+
+## Project Structure
 
 ```text
 fabrica-vehiculos-poo/
@@ -63,9 +67,10 @@ fabrica-vehiculos-poo/
 └── README.md
 ```
 
-## Cómo ejecutar
 
-Desde la raíz del proyecto:
+## How to Run
+
+From the project root:
 
 ```bash
 cd src
@@ -73,55 +78,13 @@ javac *.java
 java FactoryMain
 ```
 
-## Cómo ejecutar los tests básicos
 
-El proyecto incluye una clase de pruebas sencilla con `assert`, sin frameworks externos:
+## Possible Future Improvements
 
-```bash
-cd src
-javac *.java
-java -ea TestSistemaGestionFabrica
-```
-
-Si todo va bien, se mostrará:
-
-```text
-Todos los tests han pasado correctamente.
-```
-
-## Capturas recomendadas
-
-Antes de publicar el repositorio, añade capturas en `docs/capturas/` y enlázalas aquí:
-
-- Menú principal.
-- Consulta de stock.
-- Creación de configuración de vehículo.
-- Simulación de cadena de montaje.
-- Dashboard final.
-
-Ejemplo:
-
-```md
-![Menú principal](docs/capturas/menu-principal.png)
-```
-
-## Qué demuestra este proyecto
-
-Este proyecto demuestra conocimientos de:
-
-- Diseño de clases.
-- Herencia y polimorfismo.
-- Separación entre modelo, lógica de negocio y visualización por consola.
-- Gestión de colecciones.
-- Simulación de procesos por estados.
-- Uso de interfaces para desacoplar la visualización del dashboard.
-
-## Posibles mejoras futuras
-
-- Migrar a Maven o Gradle.
-- Añadir paquetes Java, por ejemplo `model`, `service`, `ui` y `simulation`.
-- Añadir tests con JUnit.
-- Sustituir algunos bucles manuales por `Comparator` y métodos de ordenación de Java.
-- Mejorar validaciones de entrada por consola.
-- Añadir persistencia en fichero o base de datos.
-- Crear una interfaz gráfica con JavaFX.
+* Migrate to Maven or Gradle.
+* Add Java packages, for example `model`, `service`, `ui`, and `simulation`.
+* Add tests with JUnit.
+* Replace some manual loops with `Comparator` and Java sorting methods.
+* Improve console input validations.
+* Add file or database persistence.
+* Create a graphical user interface with JavaFX.
